@@ -5,7 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+# Use dotenv to load environment variables in development
+gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
@@ -32,10 +33,34 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Use Stripe for payments
+gem 'stripe'
+# Use HTTParty to make HTTP fun again
+gem 'httparty'
+# To interact with the MailGun api
+gem 'mailgun-ruby', '~>1.1.6'
+# User Geocoder for geocoding locations
+gem 'geocoder'
+# Shrine Dependencies
+gem 'fastimage'
+gem 'image_processing'
+gem 'mini_magick'
+# User Shrine gem for image uploading
+gem 'shrine'
+# Amazone Web Services for image hosting
+gem 'aws-sdk', '~> 3'
+# Use Devise for authentication
+gem 'devise'
+# Use Pundit for authorisation system
+gem 'pundit'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Rspec for testing
+  gem 'rspec-rails', '~> 3.6'
 end
 
 group :development do
@@ -45,6 +70,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Rails ERD to generate diagrams using GraphViz
+  gem 'rails-erd'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
