@@ -24,15 +24,16 @@ Demonstrate your ability to break down the problem and design a solution.
 - Entity Relationship Diagram (ERD).
 - Project plan and estimation.
 
-I used [NIICE]() to collect some sources of inspiration for before starting to design my wireframes. 
 
 ## Design
+I used [NIICE](https://niice.co/m/70ecd2f5c183512ade440736f245dc1e) to collect some sources of inspiration for before starting to design my wireframes. 
 Green - leaf motif instantly recognisable. 
-Captain planet font? 
 Mobile first - especially as photos may be a key element. 
 
 
-I used [Figma](https://www.figma.com/file/fDL71gH16gZv1DHKe1SZWa6a/TheFourthR) to develop my wireframes and map the workflow for the user journey. 
+I used [Figma](https://www.figma.com/file/fDL71gH16gZv1DHKe1SZWa6a/TheFourthR) to develop my wireframes and map the workflow for the user journey. Using the prototyping function encouraged me to have to think through the actual functionality of each button I was placing on the page and consider how the user would navigate the app. 
+
+I looked at sites such as Etsy and Airtasker to understand how they set up their user experience and ....
 
 
 #### Tools and methodologies
@@ -47,12 +48,8 @@ I created a new [GitHub](https://github.com/hannah-be/the-fourth-R) repository t
 
 ### Build 
 #### Rails application code
-- Use postgresql database in development.
-rails new TheFourthR -T --database=postgresql
 - Use an API (eg. Omniauth, Geocoding, Maps, other..).
-
 - Use appropriate gems.
-
 - Use environmental variables to protect API keys etc. (dotenv)
 - Implement a payment system for your product. (e.g. Stripe)
 - Your app must send transactional emails (eg. using Mailgun).
@@ -62,26 +59,22 @@ rails new TheFourthR -T --database=postgresql
 - Your app will have authentication (eg. Devise, must have full functionality in place).
 - Your app will have authorisation (users have restrictions on what they can see and edit).
 - Your app will have an admin dashboard for the admin user to administrate the site.
+
+
+## Deployment
+The application has been deployed to Heroku: ................[insert URL]
 - Document your application with a README that explains how to setup, configure and use your application.
 
-
-## Deploy 
-Your application is to be deployed to Heroku (recommended) or AWS.
-
-## Present 
-You are to deliver a 7 minute presentation to the class.
-The presentation should include:
-- A Walk-through of your design decisions and documents
-- A review of your build process - challenges, favourite parts
-- A walk-through of your live app and pointing out its features
-- Answer any questions from students or teachers.
+## Presentation
+https://docs.google.com/presentation/d/1xc0JVtaoamra0zBatIBw3Ml43Sf4WdvZPnrx_3L6NeA/edit?usp=sharing
 
 
 #### Objective: 
 Design a two-way market place that provides a way for owners of broken or run-down goods to connect with people and business who have the skills to repair or maintain them. 
 
 #### Need:
-Services like AirTasker and TaskRabbit are focused on online work or simple tasks 
+Services like AirTasker and TaskRabbit are focused on online work or simple tasks, 
+ in an economy that increasingly relies on and accepts planned obselescence 
 
 ## Basic functionality for prototype
 - Repairers can develop a profile that lists their skills and location. 
