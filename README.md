@@ -27,17 +27,18 @@ Demonstrate your ability to break down the problem and design a solution.
 
 ## Design
 I used [NIICE](https://niice.co/m/70ecd2f5c183512ade440736f245dc1e) to collect some sources of inspiration for before starting to design my wireframes. 
+I wanted something green because of the instantly recognisable motif of the leaf as part of the environment movement. 
+
 Green - leaf motif instantly recognisable. 
 Mobile first - especially as photos may be a key element. 
 
 
 I used [Figma](https://www.figma.com/file/fDL71gH16gZv1DHKe1SZWa6a/TheFourthR) to develop my wireframes and map the workflow for the user journey. Using the prototyping function encouraged me to have to think through the actual functionality of each button I was placing on the page and consider how the user would navigate the app. 
 
-I looked at sites such as Etsy and Airtasker to understand how they set up their user experience and ....
+I looked at sites such as Etsy and Airtasker to understand how they set up their user experience and database models. 
 
 
 #### Tools and methodologies
-- Trello or similar project management tool to be used to track progress of build.
 - Code review. Demonstrate that you have had your code reviewed by other students and that you have provided a code review for others.
 - GitHub. Demonstrate use of frequent commits, pull requests, documentation.
 - Provide evidence you have used code quality tools (eg. Traceroute, Bullet, Brakeman, Rails Best Practices tool, RuboCop, RubyCritic, CodeClimate).
@@ -88,19 +89,21 @@ The movement towards a "gig economy" which devalues skills - purposely did not i
 
 ## Models
 
-### Owners - devise?
+### User - devise
 - user_id: integer
+- email: string
 - password: string
+
+### Owners
 - [check gumtree]
 - favourite-repairers: join table - repairer-id
 
-### Repairer - devise?
-- user_id: integer
-- password: integer
+### Repairer
 - location/region: geolocation?
 - category: string
 - rating: integer [comes from user feedback]
 
+## Admin
 
 ### Goods
 belongs_to owner
@@ -112,7 +115,6 @@ belongs_to owner
 
 
 ### RepairTicket
-- 
 - join-table: owner to repairer through good
 
 ## Messaging System
