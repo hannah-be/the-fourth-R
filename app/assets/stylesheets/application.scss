@@ -1,0 +1,64 @@
+@import "bootstrap";
+
+body {
+  color: #071C15;
+  margin: 10px;
+  padding: 10px;
+  font-family: 'Open Sans';
+  height: 100%;
+
+  background: {
+    image: url(asset-path("background.jpg"));
+    position: left 20%;
+    background-attachment: fixed;
+    size: cover;
+    repeat: no-repeat;
+  }
+  
+  h1 {
+    font-family: "Magnolia Script";
+    font-size: 3em;
+  }
+
+  h2, h4, h5 {
+    font-family: "Magnolia Script";
+  }
+
+  a {
+    color: #071C15;
+    text-decoration: none;
+  }
+  
+  input {
+    border-radius: 10px;
+    border-style: none;
+    padding: 10px;
+  }
+  
+  input:focus, select:focus, textarea:focus, button:focus {
+    outline: none;
+  }
+  
+  .field, .actions {
+    margin: 20px;
+  }
+}
+
+  .devise-body {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 20px;
+    background:#c4c4c494;
+    border-radius: 10px;
+    max-width: 500px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .navbar .nav {
+    flex-direction: row;
+    background:#c4c4c494;
+    border-radius: 10px;
+    padding: 7px;
+    align-items: center;
+  }

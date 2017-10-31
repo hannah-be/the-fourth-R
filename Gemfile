@@ -53,6 +53,8 @@ gem 'aws-sdk', '~> 3'
 gem 'devise'
 # Use Pundit for authorisation system
 gem 'pundit'
+# Use bootstrap for styling
+gem 'bootstrap', '~> 4.0.0.beta2.1'
 
 
 
