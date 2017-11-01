@@ -3,14 +3,21 @@
 #### Brief: 
 A full stack developer needs to be able to demonstrate they can build a complete application from design through to deployment, using appropriate tools and methodologies. You must build a two sided marketplace. This app will cater to two markets that your app brings together.
 
-#### Submission:
-Submit your project via Canvas. It should include a link to the published project (Heroku/AWS) and a .zip folder containing:
-- Documentation
-- ERD
-- Wireframes
-- Evidence of your design process
-- Your entire app in the original file structure and all assets
 
+#### Objective: 
+Design a two-way market place that provides a way for owners of broken or run-down goods to connect with people and business who have the skills to repair or maintain them. 
+
+#### Need:
+Services like AirTasker and TaskRabbit are focused on online work or simple tasks, 
+ in an economy that increasingly relies on and accepts planned obselescence 
+
+## Basic functionality for prototype
+- Repairers can develop a profile that lists their skills and location. 
+- Owners can sign in and create a post for their item that lists its type, problem and a photo. 
+- System will match them with repairers who have the right skill set in their region? Can notifiy repairers...
+
+## Ethical issues
+The movement towards a "gig economy" which devalues skills - purposely did not include any kind of bidding functionality. Instead promoting reuse and repair and a skills-based economy which is more sustainable. 
 
 ## Deliverables
 
@@ -49,43 +56,22 @@ I created a new [GitHub](https://github.com/hannah-be/the-fourth-R) repository t
 
 ### Build 
 #### Rails application code
-- Use an API (eg. Omniauth, Geocoding, Maps, other..).
-- Use appropriate gems.
-- Use environmental variables to protect API keys etc. (dotenv)
-- Implement a payment system for your product. (e.g. Stripe)
-- Your app must send transactional emails (eg. using Mailgun).
-- Your app should have an internal user messaging system.
-- Your app will have some type of searching, sorting and/or filtering capability.
-- Your app will have some type of file uploading capability (eg. images).
-- Your app will have authentication (eg. Devise, must have full functionality in place).
-- Your app will have authorisation (users have restrictions on what they can see and edit).
-- Your app will have an admin dashboard for the admin user to administrate the site.
 
-I set up my users through Devise and then considered a number of different methods to create the database models for the Owner and Repairer, including Single Table Inheritance, Polymorphism, and multiple Devise models. The simplest solution was a single User, with a Profile for all users, and then a table for Repairer attributes when relevant. 
+I set up my users through Devise and then considered a number of different methods to create the database models for the Owner and Repairer, including Single Table Inheritance, Polymorphism, and multiple Devise models. The simplest solution was a single User, with a Profile for all users, and then a table for Repairer attributes when relevant (see ERD Model).
 
 
 ## Deployment
 The application has been deployed to Heroku: ................[insert URL]
 - Document your application with a README that explains how to setup, configure and use your application.
 
+1. Download the zipfile of the application and extract
+2. Open the terminal and move to the folder where the extraction takes place
+3. run the command ``rake db:setup``
+4. lastly run ``rails server``
+5. Open your browser and type `localhost:3000` to enjoy the application
+
 ## Presentation
 https://docs.google.com/presentation/d/1xc0JVtaoamra0zBatIBw3Ml43Sf4WdvZPnrx_3L6NeA/edit?usp=sharing
-
-
-#### Objective: 
-Design a two-way market place that provides a way for owners of broken or run-down goods to connect with people and business who have the skills to repair or maintain them. 
-
-#### Need:
-Services like AirTasker and TaskRabbit are focused on online work or simple tasks, 
- in an economy that increasingly relies on and accepts planned obselescence 
-
-## Basic functionality for prototype
-- Repairers can develop a profile that lists their skills and location. 
-- Owners can sign in and create a post for their item that lists its type, problem and a photo. 
-- System will match them with repairers who have the right skill set in their region? Can notifiy repairers...
-
-## Ethical issues
-The movement towards a "gig economy" which devalues skills - purposely did not include any kind of bidding functionality. Instead promoting reuse and repair and a skills-based economy which is more sustainable. 
 
 
 
