@@ -26,7 +26,7 @@ Demonstrate your ability to break down the problem and design a solution.
 
 
 ## Design
-I used [NIICE](https://niice.co/m/70ecd2f5c183512ade440736f245dc1e) to collect some sources of inspiration for before starting to design my wireframes. 
+I used [NIICE](https://niice.co/m/70ecd2f5c183512ade440736f245dc1e) to collect sources of inspiration for before starting to design my wireframes. 
 I wanted something green because of the instantly recognisable motif of the leaf as part of the environment movement. 
 
 Green - leaf motif instantly recognisable. 
@@ -61,6 +61,8 @@ I created a new [GitHub](https://github.com/hannah-be/the-fourth-R) repository t
 - Your app will have authorisation (users have restrictions on what they can see and edit).
 - Your app will have an admin dashboard for the admin user to administrate the site.
 
+I set up my users through Devise and then considered a number of different methods to create the database models for the Owner and Repairer, including Single Table Inheritance, Polymorphism, and multiple Devise models. The simplest solution was a single User, with a Profile for all users, and then a table for Repairer attributes when relevant. 
+
 
 ## Deployment
 The application has been deployed to Heroku: ................[insert URL]
@@ -94,9 +96,24 @@ The movement towards a "gig economy" which devalues skills - purposely did not i
 - email: string
 - password: string
 
-### Owners
-- [check gumtree]
-- favourite-repairers: join table - repairer-id
+### Profile
+- profile_id: integer
+- user_id: references
+- is_owner: boolean
+- is_repairer: boolean
+- is_admin: boolean
+- address: references??
+- phone_number: string
+- 
+
+### Address
+- street address: string
+- suburb: string
+- state: string
+- postcode: string
+- latitude: float
+- longitude: float
+
 
 ### Repairer
 - location/region: geolocation?
@@ -106,7 +123,7 @@ The movement towards a "gig economy" which devalues skills - purposely did not i
 ## Admin
 
 ### Goods
-belongs_to owner
+belongs_to user
 - id: integer
 - title: string
 - category: string
