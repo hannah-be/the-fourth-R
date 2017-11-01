@@ -55,8 +55,8 @@ gem 'devise'
 gem 'pundit'
 # Use bootstrap for styling
 gem 'bootstrap', '~> 4.0.0.beta2.1'
-
-
+# User RailsAdmin for admin interface
+gem 'rails_admin', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
