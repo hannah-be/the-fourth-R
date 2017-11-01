@@ -19,17 +19,6 @@ Services like AirTasker and TaskRabbit are focused on online work or simple task
 ## Ethical issues
 The movement towards a "gig economy" which devalues skills - purposely did not include any kind of bidding functionality. Instead promoting reuse and repair and a skills-based economy which is more sustainable. 
 
-## Deliverables
-
-### Design 
-#### Design Documentation
-Demonstrate your ability to break down the problem and design a solution.
-- One page summary of your application including problem definition, solution.
-- A workflow diagram of the user journey/s.
-- Wireframes for at least 5 screens.
-- User stories for the whole application.
-- Entity Relationship Diagram (ERD).
-- Project plan and estimation.
 
 
 ## Design
@@ -46,9 +35,6 @@ I looked at sites such as Etsy and Airtasker to understand how they set up their
 
 
 #### Tools and methodologies
-- Code review. Demonstrate that you have had your code reviewed by other students and that you have provided a code review for others.
-- GitHub. Demonstrate use of frequent commits, pull requests, documentation.
-- Provide evidence you have used code quality tools (eg. Traceroute, Bullet, Brakeman, Rails Best Practices tool, RuboCop, RubyCritic, CodeClimate).
 
 I used [Trello](https://trello.com/b/IpcW7stE/thefourthr) to project manage my application. I planned out my [user stories](https://trello.com/b/IpcW7stE/thefourthr), and then used those to develop my models (these were then mapped out using [DBDesigner](http://dbdesigner.net/designer/schema/121955)). I reviewed all of the requirements of the assignment, and used those to plan out each part of my project. This also encouraged an Agile approach to my project management - frequently reviewing the plan and where I was at. 
 
