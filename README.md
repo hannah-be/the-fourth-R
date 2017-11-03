@@ -8,28 +8,29 @@ A full stack developer needs to be able to demonstrate they can build a complete
 Design a two-way market place that provides a way for owners of broken or run-down goods to connect with people and business who have the skills to repair or maintain them. 
 
 #### Need:
-Services like AirTasker and TaskRabbit are focused on online work or simple tasks, 
- in an economy that increasingly relies on and accepts planned obselescence 
+In an economy that increasingly relies on and accepts planned obselescence in everything from refrigerators to smartphones, and a world that is running out of space for its waste, we should be encouraging re-use and repair of our goods. 
+
+Services like AirTasker and TaskRabbit are focused on online work or simple tasks, and are structured in a way that hugely benefits the customer/receiver (which is not in itself a negative) while causing the workers/taskers to constantly underbid each other in order to get work. This model discourages people with high value skills from partaking, and thus making their skills widely known and available, and those that have little recourse to other employment to work for far below the minimum wage. 
 
 ## Basic functionality for prototype
 - Repairers can develop a profile that lists their skills and location. 
 - Owners can sign in and create a post for their item that lists its type, problem and a photo. 
-- System will match them with repairers who have the right skill set in their region? Can notifiy repairers...
+- System will match them with repairers who have the right skill set in their region.
+- Owners can submit their item to a repairer who can send a message to find out more, or provide a quote for repair.
+- Repairers can request and receive payment for completion of tasks.
+- Can notifiy repairers...
 
 ## Ethical issues
 The movement towards a "gig economy" which devalues skills - purposely did not include any kind of bidding functionality. Instead promoting reuse and repair and a skills-based economy which is more sustainable. 
 
 
-
 ## Design
 I used [NIICE](https://niice.co/m/70ecd2f5c183512ade440736f245dc1e) to collect sources of inspiration for before starting to design my wireframes. 
-I wanted something green because of the instantly recognisable motif of the leaf as part of the environment movement. 
+I wanted something green because of the instantly recognisable motif of the leaf as part of the environmental movement. 
 
 Green - leaf motif instantly recognisable. 
-Mobile first - especially as photos may be a key element. 
 
-
-I used [Figma](https://www.figma.com/file/fDL71gH16gZv1DHKe1SZWa6a/TheFourthR) to develop my wireframes and map the workflow for the user journey. Using the prototyping function encouraged me to have to think through the actual functionality of each button I was placing on the page and consider how the user would navigate the app. 
+I designed for mobile first - especially as photos may be a key element. I used [Figma](https://www.figma.com/file/fDL71gH16gZv1DHKe1SZWa6a/TheFourthR) to develop my wireframes and map the workflow for the user journey. Using the prototyping function encouraged me to have to think through the actual functionality of each button I was placing on the page and consider how the user would navigate the app. 
 
 I looked at sites such as Etsy and Airtasker to understand how they set up their user experience and database models. 
 
