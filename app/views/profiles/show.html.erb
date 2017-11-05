@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user.email %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @profile.phone %>
+</p>
+
+<feature>
+  <%= image_tag @profile.profile_photo_data %>
+</feature>
+
+<p>
+  <strong>Address:</strong>
+  <%= @profile.address.street %>, 
+  <%= @profile.address.suburb.capitalize %>
+  <%= @profile.address.state.upcase %>
+  <%= @profile.address.postcode %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profile_path %>
