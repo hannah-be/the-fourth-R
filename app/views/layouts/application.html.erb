@@ -14,7 +14,9 @@
     <nav class="navbar">
       <div class="container-fluid">
         <div class="navbar-header">
-          <h1 class="page-head">the fourth R</h1>
+          <h1 class="page-head">
+            <%= link_to "the fourth R", root_path %>
+            </h1>
         </div>
     <div class="nav navbar-right">
       <% if user_signed_in? %>
@@ -26,8 +28,6 @@
     </div>
     </nav>
 
-
-  
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
@@ -35,7 +35,7 @@
    <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container-fluid">
       <span class="nav navbar-nav">
-        <a>About</a> | <a>FAQ</a> | <a>Terms</a>
+        <p>About | FAQ | <%= link_to "Support", support_path %></p>
         </span>
     </div>
   </nav>

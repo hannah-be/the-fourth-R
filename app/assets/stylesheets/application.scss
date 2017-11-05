@@ -1,7 +1,12 @@
 @import "bootstrap";
 
+$color-grey: #c4c4c4b9;
+$color-pink: #EEE6E7;
+$color-darkgreen: #071C15;
+$color-green: #344532;
+
 body {
-  color: #071C15;
+  color: $color-darkgreen;
   margin: 10px;
   padding: 10px;
   font-family: 'Open Sans';
@@ -16,32 +21,34 @@ body {
   }
   
   h1 {
-    font-family: "Magnolia Script";
     font-size: 3em;
   }
 
-  h2, h4, h5 {
+  h1, h2, h4, h5 {
     font-family: "Magnolia Script";
   }
 
   a {
-    color: #071C15;
     text-decoration: none;
+    color: $color-darkgreen;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: $color-green;
   }
   
-  input {
+  input, .field, textarea, .actions, button {
     border-radius: 10px;
     border-style: none;
     padding: 10px;
+    margin: 20px;
   }
   
   input:focus, select:focus, textarea:focus, button:focus {
     outline: none;
   }
   
-  .field, .textarea, .actions {
-    margin: 20px;
-  }
 }
   .content {
     margin-left: auto;
@@ -49,22 +56,46 @@ body {
     text-align: center;
   }
   
-  .devise-body {
+  .devise-body, .support {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     padding: 20px;
-    background:#c4c4c494;
+    background: $color-grey;
     border-radius: 10px;
     max-width: 500px;
+    color: $color-darkgreen;
     font-family: 'Open Sans', sans-serif;
   }
   
+  .message {
+    display: flex;
+    flex-direction: column;
 
+    label {
+      font-weight: semi-bold;
+      margin-top: 10px;
+      margin-bottom: 2px;
+    }
+    input, textarea {
+      margin: 2px;
+    }
+  }
+  
   .navbar .nav {
     flex-direction: row;
-    background:#c4c4c494;
+    background: $color-grey;
     border-radius: 10px;
     padding: 7px;
     align-items: center;
+    justify-content: center;
+
+    .navbar-fixed-bottom {
+      bottom: 0px;
+      position: fixed;
+    }
+  }
+
+  p {
+    margin: 0;
   }

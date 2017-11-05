@@ -1,0 +1,26 @@
+<div class="support">
+<h2>Support</h2>
+
+<p>Need help? Send a message to our support team.</p>
+<br>
+
+<%= form_with(url: support_url, local: true) do |f| %>
+  <% unless @error_messages.empty? %>
+    <% @error_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  <% end %>
+  <div class="message">
+  <%= f.label :email, 'Your email address' %>
+  <%= f.email_field :email %>
+  </div>
+
+  <div class="message">
+  <%= f.label :message %>
+  <%= f.text_area :message, rows:6 %>
+  </div>
+
+  <%= f.button 'Send' %>
+
+<% end %>
+</div>

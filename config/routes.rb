@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :addresses
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
+  get '/support' => 'support#new'
+  post '/support' => 'support#create'
+
   devise_for :users
   resources :users, only: [:show, :update], controller: :profiles
   # get 'profiles/:id' => 'profiles#show', as: 'profile'
