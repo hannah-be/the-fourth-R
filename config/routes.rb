@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'welcome/index'
-
-  devise_for :users
+  # get 'welcome/index'
   root 'welcome#index'
+  resources :addresses
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
+  devise_for :users
+  resources :users, only: [:show, :update], controller: :profiles
+  # get 'profiles/:id' => 'profiles#show', as: 'profile'
+  resource :profile
   # Set home page to login
   # devise_scope :user do
   #   authenticated :user do

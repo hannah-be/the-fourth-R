@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Profile</h1>
+
+
+
+  <% @profiles.each do |profile| %>
+  <dl>
+      <dt>User</dt>
+        <dd><%= profile.user %></dd>
+      <dt>Name</dt>
+        <dd><%= profile.name %></dd>
+      <dt>Phone number</dt>
+        <dd><%= profile.phone %></dd>
+      <dt>Profile photo</dt>
+        <figure><%= image_tag profile.profile_photo_data %></figure>
+      <dt>Address</dt>
+        <dd><%= profile.address %></dd>
+        <p><%= link_to 'Edit', edit_profile_path(profile) %></p>
+  </dl>
+  <% end %>
+<br>
+
+<% if @profile.nil? %>
+  <%= link_to 'New Profile', new_profile_path %>
+<% end %>
