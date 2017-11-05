@@ -2,33 +2,27 @@
 
 <h1>Items</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Description</th>
-      <th>Problem</th>
-      <th>Item photo data</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container-fluid">
+  <div class="row">
     <% @items.each do |item| %>
-      <tr>
-        <td><%= item.title %></td>
-        <td><%= item.category %></td>
-        <td><%= item.description %></td>
-        <td><%= item.problem %></td>
-        <td><%= item.item_photo_data %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class="col-sm-3">
+      <div class="card card-body">
+        <% if item.photo.present? %>
+          <%= image_tag item.photo_url(:small) %>
+        <% end %>
+        <div class="card-text">
+          <h2><%= item.title %></h2>
+          <p><%= item.category %></p>
+          <p><%= item.description %></p>
+          <p><%= item.problem %></p>
+        </div>
+        <div><%= link_to 'Show', item %></div>
+        <div><%= link_to 'Edit', edit_item_path(item) %></div>
+        <div><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      </div>
+    </div¯>
     <% end %>
-  </tbody>
-</table>
+</div>
 
 <br>
 

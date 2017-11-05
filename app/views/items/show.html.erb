@@ -20,10 +20,12 @@
   <%= @item.problem %>
 </p>
 
-<p>
-  <strong>Item photo data:</strong>
-  <%= @item.item_photo_data %>
-</p>
+<% if @item.photo.present? %>
+  <figure>Photo:
+  <%= image_tag @item.photo_url(:large) %>
+  </figure>
+<% end %>
+
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

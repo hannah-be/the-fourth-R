@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20171105034444) do
     t.string "category"
     t.text "description"
     t.text "problem"
-    t.text "item_photo_data"
+    t.text "photo_data"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

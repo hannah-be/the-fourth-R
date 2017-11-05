@@ -32,9 +32,14 @@
   </div>
 
   <div class="field">
-    <%= form.label :item_photo_data %>
-    <%= form.text_area :item_photo_data, id: :item_item_photo_data %>
+    <%= form.label :photo %>
+    <%= form.file_field :photo, id: :item_photo %>
   </div>
+  
+    <div class="field">
+    Remove attachment: <%= form.check_box :remove_photo %>
+  </div>
+  
 
   <div class="actions">
     <%= form.submit %>

@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.1]
       t.string :category
       t.text :description
       t.text :problem
-      t.text :item_photo_data
+      t.text :photo_data
       t.references :user, foreign_key: true
 
       t.timestamps

@@ -1,4 +1,4 @@
-class ItemImageUploader < Shrine
+class PhotoUploader < Shrine
   include ImageProcessing::MiniMagick
 
   plugin :activerecord
