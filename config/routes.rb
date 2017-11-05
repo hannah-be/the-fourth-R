@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :update], controller: :profiles
   # get 'profiles/:id' => 'profiles#show', as: 'profile'
   resource :profile
+  resources :items
   # Set home page to login
   # devise_scope :user do
   #   authenticated :user do
