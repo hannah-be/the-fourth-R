@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # get 'welcome/index'
   root 'welcome#index'
+  get 'welcome/about', as: '/about'
+  get 'welcome/faq', as: '/faq'
   resources :addresses
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   

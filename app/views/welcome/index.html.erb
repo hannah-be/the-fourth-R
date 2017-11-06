@@ -1,4 +1,27 @@
 <div class="content">
 <h1>Welcome to the fourth R</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="intro">
+<h5>We all know about re-use, reduce and recycle, but in our era of planned obselescence and easy access to cheap goods, the fourth ‘R’, REPAIR, has been forgotten. We’re going to help it come back.</h5>
 </div>
+<div>
+<% if user_signed_in? %>
+<div class="devise-body">
+  <% if current_user.profile %>
+  <h4><%= link_to "Edit your owner profile", edit_profile_path %>
+  <% else %>
+  <h4><%= link_to "Create your owner profile", new_profile_path %></h4> 
+  <% end %>
+  </div>
+<div class="devise-body">
+  <h4><%= link_to "Add a new item for repair", root_path %></h4>
+  </div>
+<div class="devise-body">
+  <h4>Know how to fix things? <%= link_to "Set up a repairer profile", root_path %></h4>
+  </div>
+<% else %>
+<div class="devise-body">
+  <h4><%= link_to "Sign in", new_user_session_path %></h4>
+  </div>
+<% end %>
+</div>
+
