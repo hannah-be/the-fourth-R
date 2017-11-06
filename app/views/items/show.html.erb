@@ -1,0 +1,30 @@
+<p>
+  <strong>
+  <%= @item.title %>
+  </strong>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @item.category %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Problem:</strong>
+  <%= @item.problem %>
+</p>
+
+<% if @item.photo.present? %>
+  <figure>
+  <%= image_tag @item.photo_url(:medium) %>
+  </figure>
+<% end %>
+
+
+<div class="links"><%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %></div>

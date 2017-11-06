@@ -23,9 +23,13 @@
     <%= form.text_field :phone, id: :profile_phone %>
   </div>
 
-  <div class="field">
-    <%= form.label :photo_data %>
-    <%= form.text_area :photo_data, id: :profile_photo_data %>
+    <div class="field">
+    <%= form.label :photo %>
+    <%= form.file_field :photo, id: :profile_photo %>
+  </div>
+  
+    <div class="field">
+    Remove attachment: <%= form.check_box :remove_photo %>
   </div>
 
 

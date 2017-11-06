@@ -1,31 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @profile.user.email %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @profile.phone %>
-</p>
-
-<feature>
-  <%= image_tag @profile.profile_photo_data %>
-</feature>
-
-<p>
-  <strong>Address:</strong>
-  <%= @profile.address.street %>, 
-  <%= @profile.address.suburb.capitalize %>
-  <%= @profile.address.state.upcase %>
-  <%= @profile.address.postcode %>
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card card-body">
+      <% if @profile.photo.present? %>
+        <figure><%= image_tag @profile.photo_url(:medium) %></figure>
+      <% end %>
+        <div class="card-text">
+        <p><strong><%= @profile.user.email %></strong></p>
+        <p><strong>Name: </strong><%= @profile.name %></p>
+        <p><strong>Phone: </strong><%= @profile.phone %></p>
+        <p>
+          <strong>Address: </strong>
+          <%= @profile.address.street %>, 
+          <%= @profile.address.suburb.capitalize %>
+          <%= @profile.address.state.upcase %>
+          <%= @profile.address.postcode %>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>        
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profile_path %>
+<%= link_to 'Back', root_path %>

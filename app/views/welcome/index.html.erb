@@ -1,7 +1,7 @@
 <div class="content">
 <h1>Welcome to the fourth R</h1>
 <div class="intro">
-<h5>We all know about re-use, reduce and recycle, but in our era of planned obselescence and easy access to cheap goods, the fourth ‘R’, REPAIR, has been forgotten. We’re going to help it come back.</h5>
+<p>We all know about re-use, reduce and recycle, but in our era of planned obselescence and easy access to cheap goods, the fourth ‘R’, REPAIR, has been forgotten. We’re going to help it come back.</p>
 </div>
 <div>
 <% if user_signed_in? %>
@@ -13,7 +13,10 @@
   <% end %>
   </div>
 <div class="devise-body">
-  <h4><%= link_to "Add a new item for repair", root_path %></h4>
+  <h4><%= link_to "Add a new item for repair", new_item_path %></h4>
+
+    <h4>OR</h4>
+    <h4><%= link_to "View your items", items_path %></h4>
   </div>
 <div class="devise-body">
   <h4>Know how to fix things? <%= link_to "Set up a repairer profile", root_path %></h4>

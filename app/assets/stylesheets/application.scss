@@ -78,6 +78,13 @@ body {
       margin: 0;
     }
   }
+
+  .links {
+    background: $color-grey;
+    border-radius: 10px;
+    max-width: 100px;
+    padding: 2px;
+  }
   
   .devise-body, .support, .qa, .about {
     margin-left: auto;
