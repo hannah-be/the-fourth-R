@@ -7,10 +7,10 @@ $color-green: #344532;
 
 body {
   color: $color-darkgreen;
+  height: 100%;
   margin: 10px;
   padding: 10px;
   font-family: 'Open Sans';
-  height: 100%;
 
   background: {
     image: url(asset-path("background.jpg"));
@@ -89,10 +89,10 @@ body {
     padding: 7px;
     align-items: center;
     justify-content: center;
-
+    
     .navbar-fixed-bottom {
-      bottom: 0px;
       position: fixed;
+      bottom: 0px;
     }
   }
 
