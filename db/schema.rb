@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20171105022422) do
     t.bigint "user_id"
     t.string "name"
     t.string "phone"
-    t.text "profile_photo_data"
+    t.text "photo_data"
     t.bigint "address_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

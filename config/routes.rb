@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post '/support' => 'support#create'
 
   devise_for :users
-  resources :users, only: [:show, :update], controller: :profiles
+  # resources :users, only: [:show, :update], controller: :profiles
   # get 'profiles/:id' => 'profiles#show', as: 'profile'
   resource :profile
   # Set home page to login
