@@ -107,6 +107,13 @@ body {
     padding: 20px;
     margin: 20px;
   }
+
+  .back {
+    background: $color-grey;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 5px;
+  }
   
   .message {
     display: flex;

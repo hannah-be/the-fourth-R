@@ -1,5 +1,7 @@
-<h1>New Item</h1>
+<div class="back"><%= link_to 'Back', items_path %></div>
+<div class="devise-body">
+<h2>New Item</h2>
 
 <%= render 'form', item: @item %>
+</div>
 
-<%= link_to 'Back', items_path %>
