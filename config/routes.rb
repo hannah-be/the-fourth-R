@@ -8,12 +8,13 @@ Rails.application.routes.draw do
   
   get '/support' => 'support#new'
   post '/support' => 'support#create'
-
+  
   devise_for :users
   # resources :users, only: [:show, :update], controller: :profiles
   # get 'profiles/:id' => 'profiles#show', as: 'profile'
   resource :profile
   resources :items
+  resources :repairers
   # Set home page to login
   # devise_scope :user do
   #   authenticated :user do

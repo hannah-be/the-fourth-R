@@ -1,3 +1,4 @@
 class Address < ApplicationRecord
-  belongs_to :profile
+  belongs_to :user
+  has_one :address, through: :user
 end

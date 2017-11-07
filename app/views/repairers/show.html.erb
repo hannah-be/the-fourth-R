@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card card-body">
+        <% if @repairer.photo.present? %>
+        <figure><%= image_tag @repairer.photo_url(:medium) %></figure>
+        <% end %>
+        <div class="card-text">
+        <p><strong><%= @repairer.business_name %></strong></p>
+        <p><strong>Category: </strong><%= @repairer.category %></p>
+        <p><strong>Description: </strong><%= @repairer.description %></p>
+        <% if @repairer.will_travel %>
+          <p><strong>Will travel</strong></p>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  <div>
+<div>
+
+
+<%= link_to 'Edit', edit_repairer_path(@repairer) %> |
+<%= link_to 'Back', repairers_path %>
