@@ -37,8 +37,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'stripe'
 # Use HTTParty to make HTTP fun again
 gem 'httparty'
-# To interact with the MailGun api
-gem 'mailgun-ruby', '~>1.1.6'
 # User Geocoder for geocoding address
 gem 'geocoder'
 # Shrine Dependencies
@@ -59,6 +57,8 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'rails_admin', '~> 1.2'
 # Use MailGun API to send transactional emails
 gem 'mailgun-ruby', '~>1.1.6'
+# Money gem for formatting prices
+gem 'money'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

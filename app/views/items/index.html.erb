@@ -14,8 +14,10 @@
           <p><%= item.category %></p>
         </div>
         <br>
-        <div><%= link_to 'Edit', edit_item_path(item) %> |
+        <%# if item belongs to current_user %>
         <%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        <%# elsif current_user is_repairer %>
+        <div><%= link_to 'Offer to repair', item,  %>
       </div>
     </div¯>
     <% end %>

@@ -1,0 +1,49 @@
+<%= form_with(model: repairer, local: true) do |form| %>
+  <% if repairer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(repairer.errors.count, "error") %> prohibited this repairer from being saved:</h2>
+
+      <ul>
+      <% repairer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p><%= current_user.email %></p>
+
+  <div class="field">
+    <%= form.label :business_name %>
+    <%= form.text_field :business_name, id: :repairer_business_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category, id: :repairer_category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :repairer_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :will_travel %>
+    <%= form.check_box :will_travel, id: :repairer_will_travel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.text_area :photo, id: :repairer_photo %>
+  </div>
+
+  <div class="field">
+    Remove attachment: <%= form.check_box :remove_photo %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
