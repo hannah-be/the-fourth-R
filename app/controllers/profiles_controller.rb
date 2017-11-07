@@ -47,17 +47,17 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1.json
   def update
     # You cannot edit the profile of another user
-      if @profile.nil? || @profile.user != current_user
-        redirect_to root_url 
-      elsif @profile.update(profile_params) 
-        respond_to do |format|
+      # if @profile.nil? || @profile.user != current_user
+        # redirect_to root_url 
+    respond_to do |format|
+      if @profile.update(profile_params) 
           format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
           format.json { render :show, status: :ok, location: @profile }
+        else
+          format.html { render :edit }
+          format.json { render json: @profile.errors, status: :unprocessable_entity }
+        
         end
-      else
-        format.html { render :edit }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
-      end
     end
   end
 
@@ -80,5 +80,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:user_id, :name, :phone, :photo, :remove_photo, address_attributes: [:street, :suburb, :postcode, :state, :country])
+      params.require(:profile).permit(:user_id, :name, :phone, :photo, :remove_photo, address_attributes: [:street, :suburb, :postcode, :state, :country, :latitude, :longitude])
     end
+  end
