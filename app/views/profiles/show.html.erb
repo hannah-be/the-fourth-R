@@ -11,11 +11,13 @@
         <p><strong>Phone: </strong><%= @profile.phone %></p>
         <p>
           <strong>Address: </strong>
-          <%= @profile.address.street %>, 
-          <%= @profile.address.suburb.capitalize %>
+          <%= @profile.address.latitude %>, 
+          <%= @profile.address.longitude %>
           <%= @profile.address.state.upcase %>
           <%= @profile.address.postcode %>
         </p>
+        <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@profile.address.latitude},#{@profile.address.longitude}&markers=#{@profile.address.latitude},#{@profile.address.longitude}&zoom=7&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+              class: 'img-fluid img-rounded', alt: "Profile address on the map"%>
         </div>
       </div>
     </div>
