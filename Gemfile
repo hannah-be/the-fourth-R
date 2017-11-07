@@ -39,7 +39,7 @@ gem 'stripe'
 gem 'httparty'
 # To interact with the MailGun api
 gem 'mailgun-ruby', '~>1.1.6'
-# User Geocoder for geocoding locations
+# User Geocoder for geocoding address
 gem 'geocoder'
 # Shrine Dependencies
 gem 'fastimage'
