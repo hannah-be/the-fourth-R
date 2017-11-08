@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    # redirect_to root_url if item.user != current_user
+    redirect_to root_url if item.user != current_user
   end
 
   # GET /items/new
