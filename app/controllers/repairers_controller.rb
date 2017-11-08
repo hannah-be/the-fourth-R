@@ -7,17 +7,18 @@ class RepairersController < ApplicationController
   def index
     @repairers = Repairer.all
 
-    @electronics_repairers = Repairer.where(category: 'electronics')
-    @carpentry_repairers = Repairer.where(category: 'carpentry')
-    @jewellery_repairers = Repairer.where(category: 'jewellery')
-    @whitegoods_repairers = Repairer.where(category: 'whitegoods')
-    @clothing_repairers = Repairer.where(category: 'clothing')
-    @upholstery_repairers = Repairer.where(category: 'upholstery')
+    # @electronics_repairers = Repairer.where(category: 'electronics')
+    # @carpentry_repairers = Repairer.where(category: 'carpentry')
+    # @jewellery_repairers = Repairer.where(category: 'jewellery')
+    # @whitegoods_repairers = Repairer.where(category: 'whitegoods')
+    # @clothing_repairers = Repairer.where(category: 'clothing')
+    # @upholstery_repairers = Repairer.where(category: 'upholstery')
   end
 
   # GET /repairers/1
   # GET /repairers/1.json
   def show
+    
   end
 
   # GET /repairers/new
@@ -76,8 +77,9 @@ class RepairersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_repairer
-      @repairer = Repairer.find_by(user: current_user)
+      @repairer = Repairer.find(params[:id])
     end
+   
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def repairer_params

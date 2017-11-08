@@ -57,17 +57,24 @@ To setup, configure and use the application on your own server:
 1. Download the zipfile of the application and extract
 2. Open the terminal and move to the folder where the extraction takes place
 3. Create a .env file in the root directory and setup the following environment variables:
+S3 Services
   - S3_ACCESS_KEY_ID
   - S3_SECRET_ACCESS_KEY
   - S3_REGION 
   - S3_BUCKET 
 
+Mailgun
   - MAILGUN_API_KEY 
   - MAILGUN_DOMAIN
 
   - SUPPORT_EMAIL 
 
+Google Maps Geocoder
   - GEOCODER_API_KEY 
+
+Stripe
+  - STRIPE_PUBLISHABLE_KEY
+  - STRIPE_SECRET_KEY
 
 3. run the command ``rake db:setup``
 4. lastly run ``rails server``

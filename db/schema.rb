@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 20171108022455) do
     t.text "description"
     t.text "problem"
     t.text "photo_data"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.bigint "address_id"
     t.index ["address_id"], name: "index_items_on_address_id"
     t.index ["user_id"], name: "index_items_on_user_id"
