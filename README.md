@@ -1,9 +1,5 @@
 # README
 
-#### Brief: 
-A full stack developer needs to be able to demonstrate they can build a complete application from design through to deployment, using appropriate tools and methodologies. You must build a two sided marketplace. This app will cater to two markets that your app brings together.
-
-
 #### Objective: 
 Design a two-way market place that provides a way for owners of broken or run-down goods to connect with people and business who have the skills to repair or maintain them. 
 
@@ -12,13 +8,18 @@ In an economy that increasingly relies on and accepts planned obselescence in ev
 
 Services like AirTasker and TaskRabbit are focused on online work or simple tasks, and are structured in a way that hugely benefits the customer/receiver (which is not in itself a negative) while causing the workers/taskers to constantly underbid each other in order to get work. This model discourages people with high value skills from partaking, and thus making their skills widely known and available, and those that have little recourse to other employment to work for far below the minimum wage. 
 
+Bright Sparks program: https://medium.com/@erinlewisfitz/lessonsfrombrightsparks-8d56714356ad
+
 ## Basic functionality for prototype
 - Repairers can develop a profile that lists their skills and location. 
 - Owners can sign in and create a post for their item that lists its type, problem and a photo. 
-- System will match them with repairers who have the right skill set in their region.
+- Owners can search through the registered repairers to find one that has the right skill set in their region.
 - Owners can submit their item to a repairer who can send a message to find out more, or provide a quote for repair.
 - Repairers can request and receive payment for completion of tasks.
-- Can notifiy repairers...
+
+Further functionality
+- System will match them with repairers who have the right skill set in their region.
+- Owners can leave reviews for repairers
 
 ## Ethical issues
 The movement towards a "gig economy" which devalues skills - purposely did not include any kind of bidding functionality. Instead promoting reuse and repair and a skills-based economy which is more sustainable. 
@@ -34,6 +35,8 @@ I designed for mobile first - especially as photos may be a key element. I used 
 
 I looked at sites such as Etsy and Airtasker to understand how they set up their user experience and database models. 
 
+Style guide: 
+![style guide](/assets/images/styleguide.png)
 
 #### Tools and methodologies
 
@@ -48,11 +51,24 @@ I set up my users through Devise and then considered a number of different metho
 
 
 ## Deployment
-The application has been deployed to Heroku: ................[insert URL]
-- Document your application with a README that explains how to setup, configure and use your application.
+The application has been deployed to Heroku: https://tranquil-anchorage-29674.herokuapp.com/
 
+To setup, configure and use the application on your own server:
 1. Download the zipfile of the application and extract
 2. Open the terminal and move to the folder where the extraction takes place
+3. Create a .env file in the root directory and setup the following environment variables:
+  - S3_ACCESS_KEY_ID
+  - S3_SECRET_ACCESS_KEY
+  - S3_REGION 
+  - S3_BUCKET 
+
+  - MAILGUN_API_KEY 
+  - MAILGUN_DOMAIN
+
+  - SUPPORT_EMAIL 
+
+  - GEOCODER_API_KEY 
+
 3. run the command ``rake db:setup``
 4. lastly run ``rails server``
 5. Open your browser and type `localhost:3000` to enjoy the application

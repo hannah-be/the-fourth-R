@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.where(user: current_user)
   end
 
   # GET /items/1
@@ -17,7 +17,6 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
-
   end
 
   # GET /items/1/edit

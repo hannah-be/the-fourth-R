@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_one :profile
   has_one :repairer
   has_many :items
-  has_many :address
+  has_many :addresses
 end

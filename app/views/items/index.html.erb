@@ -2,8 +2,8 @@
 <%= link_to 'New Item', new_item_path %>
 
 <div class="container-fluid">
-    <div class="col-md-4">
   <div class="row">
+    <div class="col-md-6">
     <% @items.each do |item| %>
       <div class="card card-body">
         <% if item.photo.present? %>
@@ -17,10 +17,10 @@
         <%# if item belongs to current_user %>
         <%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></div>
         <%# elsif current_user is_repairer %>
-        <div><%= link_to 'Offer to repair', item,  %>
+        <%# <div><%= link_to 'Offer to repair', item,  %> 
       </div>
-    </div¯>
     <% end %>
+    </div>
 </div>
 
 <br>
