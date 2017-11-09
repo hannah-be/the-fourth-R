@@ -5,7 +5,7 @@ In an economy that increasingly relies on and accepts planned obselescence in ev
 
 Services like AirTasker and TaskRabbit are focused on online work or simple tasks, and are structured in a way that hugely benefits the customer/receiver (which is not in itself a negative) while causing the workers/taskers to constantly underbid each other in order to get work. This model discourages people with high value skills from partaking, and thus making their skills widely known and available, and those that have little recourse to other employment to work for far below the minimum wage. 
 
-Bright Sparks program: https://medium.com/@erinlewisfitz/lessonsfrombrightsparks-8d56714356ad
+Evidence of need/demand: [Bright Sparks program](https://medium.com/@erinlewisfitz/lessonsfrombrightsparks-8d56714356ad)
 
 #### Objective: 
 Design a two-way market place that provides a way for owners of broken or run-down goods to connect with people and business who have the skills to repair and maintain them. 
@@ -58,7 +58,7 @@ I created a new [GitHub](https://github.com/hannah-be/the-fourth-R) repository t
 
 I set up my users through Devise and then considered a number of different methods to create the database models for the Owner and Repairer, including Single Table Inheritance, Polymorphism, and multiple Devise models. The simplest solution was a single User, with a Profile for all users, which would have many items that would need a repair (join table) and then a table for Repairer attributes when relevant (see ERD Model).
 
-I used `Shrine` to allow users to upload profile photos, and images for their broken items. 
+I used `Shrine` to allow users to upload profile photos, and images for their broken items and `Mailgun` to implement a support email function for users to ask for help, after setting up a controller for static pages (including the landing index, about and FAQ pages).
 
 Because addresses would be used by multiple models (both repairers and items would have locations), addresses were set up as their own table. So that users could view and update addresses without having to navigate to a separate form, I used the ``accepts_nested_attributes_for`` association for the Repairer and Item models. By updating the params for each of these models to permit `address_attributes` I could then use the `form.fields_for` tag in the form for each of them. 
 

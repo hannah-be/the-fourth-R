@@ -13,6 +13,7 @@ class RepairersController < ApplicationController
     @whitegoods_repairers = Repairer.where(category: 'whitegoods')
     @clothing_repairers = Repairer.where(category: 'clothing')
     @upholstery_repairers = Repairer.where(category: 'upholstery')
+    @ceramics_repairers = Repairer.where(category: 'ceramics')
   end
 
   # GET /repairers/1

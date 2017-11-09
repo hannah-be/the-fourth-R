@@ -30,6 +30,7 @@
         </p>
       </div>
 
+        <div>
         <%# if item belongs to current_user %>
         <% if @item.user == current_user %>
         <%# if repair already exists %>
@@ -39,13 +40,12 @@
           <% else %>
             <%= link_to 'Get it repaired', new_repair_path(item_id: @item.id) %>
           <% end %></div>
-          <div class="links">
-          <%= link_to 'Edit', edit_item_path(@item) %> | 
-          <%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          <div class="links"><%= link_to 'Edit', edit_item_path(@item) %></div>
+          <div class="links"><%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } %></div>
         <% end %>
         <%# elsif current_user is_repairer %>
         <%# <div><%= link_to 'Offer to repair', item,  %> 
-      
+      </div>
       
       </div>
       

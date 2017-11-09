@@ -158,3 +158,31 @@ body {
   p {
     margin: 0;
   }
+
+.btn {
+    font-family: 'Open Sans';
+    padding: 14px 24px;
+    margin: 5px;
+    border: 0 none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    // text-transform: uppercase;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-primary {
+    background: $color-green;
+    color: $color-pink;
+}
+ 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: $color-grey;
+}
+ 
+.btn-primary:active, .btn-primary.active {
+    background: $color-grey;
+    box-shadow: none;
+}

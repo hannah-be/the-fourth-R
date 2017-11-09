@@ -1,5 +1,6 @@
 <h2>Repairers</h2>
 
+<div class="devise-body">
 <%# <details> %>
   <h4>All</h4>
 <%= render @repairers %>
@@ -7,5 +8,39 @@
 <br>
 
 
-
+<summary><h4>Filter by cateogy</h4></summary>
+<details>
+<h2>Electronics</h2>
+<%= render @electronics_repairers
+ %>
 <br>
+
+<h2>Clothing</h2>
+<%= render @clothing_repairers 
+ %>
+<br>
+
+<h2>White Goods</h2>
+<%= render @whitegoods_repairers 
+ %>
+<br>
+
+<h2>Jewellery</h2>
+<%= render @jewellery_repairers 
+ %>
+<br>
+
+<h2>Carpentry</h2>
+<%= render @carpentry_repairers 
+ %>
+<br>
+
+<h2>Ceramics</h2>
+<%= render @ceramics_repairers 
+ %>
+<br>
+
+<h2>Upholstery</h2>
+<%= render @upholstery_repairers %>
+</details>
+</div>
