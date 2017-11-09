@@ -35,12 +35,12 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 # Use Stripe for payments
 gem 'stripe'
-# OAuth for authenticating and accessing users
-gem 'omniauth-stripe-connect'
 # Use HTTParty to make HTTP fun again
 gem 'httparty'
 # User Geocoder for geocoding address
 gem 'geocoder'
+# Use bootstrap for styling
+gem 'bootstrap', '~> 4.0.0.beta2.1'
 # Shrine Dependencies
 gem 'fastimage'
 gem 'image_processing'
@@ -53,10 +53,12 @@ gem 'aws-sdk', '~> 3'
 gem 'devise'
 # Use Pundit for authorisation system
 gem 'pundit'
-# Use bootstrap for styling
-gem 'bootstrap', '~> 4.0.0.beta2.1'
 # User RailsAdmin for admin interface
 gem 'rails_admin', '~> 1.2'
+# Omniauth
+gem 'omniauth'
+# Rails admin integration with Pundit authorisation
+gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 # Use MailGun API to send transactional emails
 gem 'mailgun-ruby', '~>1.1.6'
 # Money gem for formatting prices

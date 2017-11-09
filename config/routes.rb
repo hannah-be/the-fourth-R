@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
+  devise_for :admins
   # get 'welcome/index'
   root 'welcome#index'
   get 'welcome/about', as: '/about'
   get 'welcome/faq', as: '/faq'
-  resources :addresses
+  devise_for :admins, only: [path_names: { admin_sign_in: 'admin login', admin_sign_out: 'admin logout', admin_sign_up: 'admin signup' }]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
   resources :charges, only: [:new, :create]
@@ -13,22 +14,17 @@ Rails.application.routes.draw do
   get '/support' => 'support#new'
   post '/support' => 'support#create'
   
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions:           "users/sessions",
+    passwords:          "users/passwords",
+    registrations:      "users/registrations",
+    confirmations:      "users/confirmations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
   # resources :users, only: [:show, :update], controller: :profiles
   # get 'profiles/:id' => 'profiles#show', as: 'profile'
   resource :profile
   resources :items
   resources :repairers
   resources :repairs, only: [:index, :show, :new, :create]
-  # Set home page to login
-  # devise_scope :user do
-  #   authenticated :user do
-  #     root 'home#index', as: :authenticated_root
-  #   end
-
-  #   unauthenticated do
-  #     root 'devise/sessions#new', as: :unauthenticated_root
-  #   end
-  # end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

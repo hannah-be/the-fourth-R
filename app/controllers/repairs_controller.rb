@@ -50,6 +50,12 @@ class RepairsController < ApplicationController
     redirect_to new_repair_path(item_id: @repair.item.id)
   end
 
+  def update
+    repair = Repair.find(params[:id])
+
+    authorize repair
+  end
+  
   private
     def set_repair
     # if params[:id]
