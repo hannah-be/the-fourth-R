@@ -28,13 +28,14 @@ The movement towards a "gig economy" which devalues skills - purposely did not i
 ## Design
 I used [NIICE](https://niice.co/m/70ecd2f5c183512ade440736f245dc1e) to collect sources of inspiration for before starting to design my wireframes. 
 ![Inspiration](/app/assets/images/niice.png) 
-I wanted something green because of the instantly recognisable motif of the leaf as part of the reuse-reduce-recycle, and used this to develop a style guide.
+I wanted something green because of the instantly recognisable motif of the leaf as part of the reuse-reduce-recycle, and used this to develop a style guide, as well as a favicon.
 
-Style guide: 
-<img src="/app/assets/images/styleguide.png" width="100">
+#### Style guide: 
+
+<img src="/app/assets/images/styleguide.png" width="400">
 
 I designed for mobile first - especially as photos would be a key element of the user experience. I used [Figma](https://www.figma.com/file/fDL71gH16gZv1DHKe1SZWa6a/TheFourthR) to develop my wireframes and map the workflow for the user journey.
-![Landing page](/app/assets/images/figmascreen.png)
+<img src="/app/assets/images/figmascreen.png" width="400">
 Using the prototyping function encouraged me to have to think through the actual functionality of each button I was placing on the page and consider how the user would navigate the app. 
 ![Prototype](/app/assets/images/figmaprototype.png)
 
@@ -63,7 +64,7 @@ Because addresses would be used by multiple models (both repairers and items wou
 
 Once the Address field was working, I implemented the Google Geocoder API to allow the addresses to be geocoded and represented on a static google map. 
 
-I set up the 
+I set up the Repair model as a join table between the items and repairers, that used `Stripe` to request a payment. The functionality of this is limited and doesn't work at all as I would like it to, but was a useful first step in understanding how `Stripe` works. 
 
 I used pull requests through GitHub to have my code reviewed before merging branches when I implemented the geocoder gem and integrated the payment system through `Stripe`.
 
@@ -71,7 +72,7 @@ I used pull requests through GitHub to have my code reviewed before merging bran
 The application has been deployed to Heroku: https://tranquil-anchorage-29674.herokuapp.com/
 
 To setup, configure and use the application on your own server:
-1. Download the zipfile of the application and extract
+1. Download the zipfile of the application and extract the app
 2. Open the terminal and move to the folder where the extraction takes place
 3. Create a .env file in the root directory and setup the following environment variables:
 
@@ -96,11 +97,6 @@ Stripe
 4. Run the command ``rake db:setup``
 5. Lastly, run ``rails server``
 6. Open your browser and type `localhost:3000` to enjoy the application
-
-## Presentation
-https://docs.google.com/presentation/d/1xc0JVtaoamra0zBatIBw3Ml43Sf4WdvZPnrx_3L6NeA/edit?usp=sharing
-
-
 
 ## Models
 
