@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108022455) do
+ActiveRecord::Schema.define(version: 20171108124457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20171108022455) do
     t.decimal "longitude", precision: 10, scale: 6
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "repairer_id"
+    t.index ["repairer_id"], name: "index_addresses_on_repairer_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -67,6 +69,18 @@ ActiveRecord::Schema.define(version: 20171108022455) do
     t.index ["user_id"], name: "index_repairers_on_user_id"
   end
 
+  create_table "repairs", force: :cascade do |t|
+    t.bigint "item_id"
+    t.bigint "repairer_id"
+    t.string "charge_identifier"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["item_id"], name: "index_repairs_on_item_id"
+    t.index ["repairer_id"], name: "index_repairs_on_repairer_id"
+    t.index ["user_id"], name: "index_repairs_on_user_id"
+  end
+
   create_table "skills", force: :cascade do |t|
     t.string "skill"
     t.datetime "created_at", null: false
@@ -90,9 +104,13 @@ ActiveRecord::Schema.define(version: 20171108022455) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "repairers"
   add_foreign_key "items", "addresses"
   add_foreign_key "items", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "repairers", "addresses"
   add_foreign_key "repairers", "users"
+  add_foreign_key "repairs", "items"
+  add_foreign_key "repairs", "repairers"
+  add_foreign_key "repairs", "users"
 end

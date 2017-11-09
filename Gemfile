@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 # Use Stripe for payments
 gem 'stripe'
+# OAuth for authenticating and accessing users
+gem 'omniauth-stripe-connect'
 # Use HTTParty to make HTTP fun again
 gem 'httparty'
 # User Geocoder for geocoding address

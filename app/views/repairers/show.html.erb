@@ -9,15 +9,27 @@
         <p><strong><%= @repairer.business_name %></strong></p>
         <p><strong>Category: </strong><%= @repairer.category %></p>
         <p><strong>Description: </strong><%= @repairer.description %></p>
+        <p>
+        <strong>Address: </strong>
+          <%= @repairer.address.street %>, 
+          <%= @repairer.address.suburb %>
+          <%= @repairer.address.state.upcase %>
+          <%= @repairer.address.postcode %>
+        </p>
+
+        <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@repairer.address.latitude},#{@repairer.address.longitude}&markers=#{@repairer.address.latitude},#{@repairer.address.longitude}&zoom=8&size=300x300&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+              class: 'img-fluid img-rounded', alt: "repairer address on the map"%>
+
         <% if @repairer.will_travel %>
           <p><strong>Will travel</strong></p>
         <% end %>
+
         </div>
       </div>
     </div>
   <div>
 <div>
 
-
+<%= link_to 'Request repair', new_repair_path %>
 <%= link_to 'Edit', edit_repairer_path(@repairer) %> |
 <%= link_to 'Back', repairers_path %>

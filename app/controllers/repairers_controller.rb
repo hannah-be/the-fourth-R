@@ -7,12 +7,12 @@ class RepairersController < ApplicationController
   def index
     @repairers = Repairer.all
 
-    # @electronics_repairers = Repairer.where(category: 'electronics')
-    # @carpentry_repairers = Repairer.where(category: 'carpentry')
-    # @jewellery_repairers = Repairer.where(category: 'jewellery')
-    # @whitegoods_repairers = Repairer.where(category: 'whitegoods')
-    # @clothing_repairers = Repairer.where(category: 'clothing')
-    # @upholstery_repairers = Repairer.where(category: 'upholstery')
+    @electronics_repairers = Repairer.where(category: 'electronics')
+    @carpentry_repairers = Repairer.where(category: 'carpentry')
+    @jewellery_repairers = Repairer.where(category: 'jewellery')
+    @whitegoods_repairers = Repairer.where(category: 'whitegoods')
+    @clothing_repairers = Repairer.where(category: 'clothing')
+    @upholstery_repairers = Repairer.where(category: 'upholstery')
   end
 
   # GET /repairers/1
@@ -24,7 +24,7 @@ class RepairersController < ApplicationController
   # GET /repairers/new
   def new
     @repairer = Repairer.new
-    # @repairer.build_address
+    @repairer.build_address
   end
 
   # GET /repairers/1/edit
@@ -77,12 +77,14 @@ class RepairersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_repairer
-      @repairer = Repairer.find(params[:id])
+   
+        @repairer = Repairer.find_by(user: current_user)
+      
     end
    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def repairer_params
-      params.require(:repairer).permit(:user_id, :business_name, :category, :description, :will_travel, :photo, :remove_photo, address_attributes: [:street, :suburb, :postcode, :state, :country])
+      params.require(:repairer).permit(:user_id, :business_name, :category, :description, :will_travel, :photo, :remove_photo, address_attributes: [:street, :suburb, :postcode, :state, :country, :latitude, :longitude])
     end
 end

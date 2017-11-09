@@ -1,0 +1,13 @@
+<h2>All your items sent for repair</h2>
+
+<% @repairs.each do |repair| %>
+  <% if repair.item.user == current_user %>
+  <div>
+<div class="main">
+    <h4><%= link_to repair.item.title, repair_path(repair) %></h4>
+    <%= time_tag repair.created_at %>
+  </div>
+  <br>
+</div>
+    <% end %>
+<% end %>
