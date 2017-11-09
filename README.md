@@ -15,9 +15,9 @@ Design a two-way market place that provides a way for owners of broken or run-do
 - Owners can sign in and create a post for their item that lists its type, problem and a photo. 
 - Owners can filter through the registered repairers to find one that has the right skill set in their region.
 - Owners can submit their item to a repairer who can send a message to find out more, or provide a quote for repair.
-- Repairers can request and receive payment for completion of tasks.
 
 Further functionality
+- Repairers can request and receive payment for completion of tasks.
 - System will match them with repairers who have the right skill set in their region.
 - Owners can leave reviews for repairers.
 

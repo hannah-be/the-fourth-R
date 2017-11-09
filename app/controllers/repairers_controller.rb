@@ -7,13 +7,13 @@ class RepairersController < ApplicationController
   def index
     @repairers = Repairer.all
 
-    @electronics_repairers = Repairer.where(category: 'electronics')
-    @carpentry_repairers = Repairer.where(category: 'carpentry')
-    @jewellery_repairers = Repairer.where(category: 'jewellery')
-    @whitegoods_repairers = Repairer.where(category: 'whitegoods')
-    @clothing_repairers = Repairer.where(category: 'clothing')
-    @upholstery_repairers = Repairer.where(category: 'upholstery')
-    @ceramics_repairers = Repairer.where(category: 'ceramics')
+    @electronics_repairers = Repairer.where(category: 'Electronics')
+    @carpentry_repairers = Repairer.where(category: 'Carpentry')
+    @jewellery_repairers = Repairer.where(category: 'Jewellery')
+    @whitegoods_repairers = Repairer.where(category: 'Whitegoods')
+    @clothing_repairers = Repairer.where(category: 'Clothing')
+    @upholstery_repairers = Repairer.where(category: 'Upholstery')
+    @ceramics_repairers = Repairer.where(category: 'Ceramics')
   end
 
   # GET /repairers/1

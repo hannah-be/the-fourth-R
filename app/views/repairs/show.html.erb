@@ -4,9 +4,9 @@
 <div class="main">
 <p><strong>Problem: </strong><%= @repair.item.problem %></p>
 <p><strong>Repairer: </strong><%= @repair.repairer.business_name %></p>
+
+
+<%= link_to('Send a message to the repairer', repair_conversations_path(repair_id: @repair.id, sender_id: current_user.id, recipient_id: @repair.repairer), method: 'post', class: 'btn btn-primary') if @repair.repairer != current_user.id %>
+<%= link_to('Go to Inbox', repair_conversations_path(repair_id: @repair.id), class: 'btn btn-primary') if @repair.repairer == current_user.id %>
+
 </div>
-
-
-<%= link_to('Send a message to the repairer', repair_conversations_path(repair_id: @repair.id, sender_id: current_user.id, recipient_id: @repair.repairer), method: 'post', class: 'btn btn-danger') if @repair.repairer != current_user.id %>
-<%= link_to('Go to Inbox', repair_conversations_path(repair_id: @repair.id), class: 'btn btn-danger') if @repair.repairer == current_user.id %>
-
