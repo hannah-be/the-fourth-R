@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171109010355) do
+ActiveRecord::Schema.define(version: 20171109033142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 20171109010355) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_conversations_on_item_id"
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "title"
     t.string "category"
@@ -58,6 +67,17 @@ ActiveRecord::Schema.define(version: 20171109010355) do
     t.bigint "address_id"
     t.index ["address_id"], name: "index_items_on_address_id"
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "conversation_id"
+    t.bigint "user_id"
+    t.boolean "read", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -122,6 +142,7 @@ ActiveRecord::Schema.define(version: 20171109010355) do
   end
 
   add_foreign_key "addresses", "repairers"
+  add_foreign_key "conversations", "items"
   add_foreign_key "items", "addresses"
   add_foreign_key "items", "users"
   add_foreign_key "profiles", "users"
