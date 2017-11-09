@@ -16,6 +16,7 @@
         <br>
         <%# if item belongs to current_user %>
         <% if item.user == current_user %>
+        <%= link_to 'Repair', new_repair_path(item_id: item.id) %>
         <%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></div>
         <% end %>
         <%# elsif current_user is_repairer %>

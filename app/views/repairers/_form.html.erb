@@ -42,6 +42,13 @@
     Remove attachment: <%= form.check_box :remove_photo %>
   </div>
 
+   <%= form.fields_for :address do |address_fields| %>
+    Street: <%= address_fields.text_field :street %>
+    Suburb: <%= address_fields.text_field :suburb %>
+    State: <%= address_fields.text_field :state %>
+    Post code: <%= address_fields.text_field :postcode %>
+  <% end %>
+
 
   <div class="actions">
     <%= form.submit %>

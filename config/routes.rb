@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+
   # get 'welcome/index'
   root 'welcome#index'
   get 'welcome/about', as: '/about'
   get 'welcome/faq', as: '/faq'
   resources :addresses
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
+  resources :charges, only: [:new, :create]
+  get 'thanks', to: 'charges#thanks', as: 'thanks'
   
   get '/support' => 'support#new'
   post '/support' => 'support#create'
@@ -15,6 +19,7 @@ Rails.application.routes.draw do
   resource :profile
   resources :items
   resources :repairers
+  resources :repairs, only: [:index, :show, :new, :create]
   # Set home page to login
   # devise_scope :user do
   #   authenticated :user do

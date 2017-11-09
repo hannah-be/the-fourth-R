@@ -36,7 +36,7 @@ I designed for mobile first - especially as photos may be a key element. I used 
 I looked at sites such as Etsy and Airtasker to understand how they set up their user experience and database models. 
 
 Style guide: 
-![style guide](/assets/images/styleguide.png)
+![style guide](/app/assets/images/styleguide.png)
 
 #### Tools and methodologies
 
