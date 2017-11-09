@@ -17,7 +17,7 @@
           <%= @repairer.address.postcode %>
         </p>
 
-        <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@repairer.address.latitude},#{@repairer.address.longitude}&markers=#{@repairer.address.latitude},#{@repairer.address.longitude}&zoom=8&size=300x300&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+        <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@repairer.address.latitude},#{@repairer.address.longitude}&markers=#{@repairer.address.latitude},#{@repairer.address.longitude}&zoom=12&size=300x300&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
               class: 'img-fluid img-rounded', alt: "repairer address on the map"%>
 
         <% if @repairer.will_travel %>

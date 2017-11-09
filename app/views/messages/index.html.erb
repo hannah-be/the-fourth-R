@@ -1,0 +1,37 @@
+<div>Messaging <%= @repair.repairer.user.email  %> regarding <strong> <%= @repair.item.title %> </strong></div>
+
+<% if @over_ten %>
+  <%= link_to 'Show Previous', '?m=all' %>
+<% end %>
+
+<div class="body">
+  <% @messages.each do |message| %>
+    <% if message.body %>
+      <% user = User.find(message.user_id) %>
+      <div class="item">
+        <div class="content">
+          <div class="header"><strong><%= user.email %></strong>     <%= message.message_time %></div>
+            <div class="list">
+              <div class="item">
+                <i class="right triangle icon"></i>
+                <%= message.body %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= form_for [@repair, @conversation, @message], html: {class: "ui reply form"} do |f| %>
+  <div class="field">
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+  <div>
+    <br>
+    <%= f.submit "Add Reply", class: "btn btn-danger" %>
+  </div>
+<% end %>
+<br>
+
+<%= link_to 'Back', repairs_path, class: 'btn btn-danger' %>

@@ -7,6 +7,8 @@ class CreateMessages < ActiveRecord::Migration[5.1]
       t.boolean :read, :default => false
    
       t.timestamps
+
+      t.index :created_at
     end
   end
 end

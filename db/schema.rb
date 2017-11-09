@@ -47,12 +47,14 @@ ActiveRecord::Schema.define(version: 20171109033142) do
   end
 
   create_table "conversations", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "recipient_id"
-    t.bigint "item_id"
+    t.bigint "sender_id"
+    t.bigint "recipient_id"
+    t.bigint "repair_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_conversations_on_item_id"
+    t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
+    t.index ["repair_id"], name: "index_conversations_on_repair_id"
+    t.index ["sender_id"], name: "index_conversations_on_sender_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -77,6 +79,7 @@ ActiveRecord::Schema.define(version: 20171109033142) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["created_at"], name: "index_messages_on_created_at"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -142,7 +145,9 @@ ActiveRecord::Schema.define(version: 20171109033142) do
   end
 
   add_foreign_key "addresses", "repairers"
-  add_foreign_key "conversations", "items"
+  add_foreign_key "conversations", "repairs"
+  add_foreign_key "conversations", "users", column: "recipient_id"
+  add_foreign_key "conversations", "users", column: "sender_id"
   add_foreign_key "items", "addresses"
   add_foreign_key "items", "users"
   add_foreign_key "profiles", "users"

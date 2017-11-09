@@ -1,8 +1,12 @@
-<div class="links"><%= link_to "Back", repairs_path %></div>
+<div class="links btn btn-danger"><%= link_to "Back", repairs_path %></div>
 <h2><%= @repair.item.title %></h2>
 
 <div class="main">
 <p><strong>Problem: </strong><%= @repair.item.problem %></p>
 <p><strong>Repairer: </strong><%= @repair.repairer.business_name %></p>
 </div>
+
+
+<%= link_to('Send a message to the repairer', repair_conversations_path(repair_id: @repair.id, sender_id: current_user.id, recipient_id: @repair.repairer), method: 'post', class: 'btn btn-danger') if @repair.repairer != current_user.id %>
+<%= link_to('Go to Inbox', repair_conversations_path(repair_id: @repair.id), class: 'btn btn-danger') if @repair.repairer == current_user.id %>
 

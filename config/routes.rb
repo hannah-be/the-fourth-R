@@ -24,7 +24,12 @@ Rails.application.routes.draw do
   # resources :users, only: [:show, :update], controller: :profiles
   # get 'profiles/:id' => 'profiles#show', as: 'profile'
   resource :profile
-  resources :items
+  resources :items 
+  
   resources :repairers
-  resources :repairs, only: [:index, :show, :new, :create]
+  resources :repairs, only: [:index, :show, :new, :create] do
+    resources :conversations do
+      resources :messages
+    end
+  end
 end

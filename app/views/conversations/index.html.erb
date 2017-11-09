@@ -1,0 +1,17 @@
+<div class="body">
+  <h3>Mailbox</h3>
+  <div>
+    <% @conversations.each do |conversation| %>
+      <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
+        <% if conversation.sender_id == current_user.id %>
+          <% recipient = User.find(conversation.recipient_id) %>
+        <% else %>
+          <% recipient = User.find(conversation.sender_id) %>
+        <% end %>
+        <%= link_to "Re: #{conversation.repair.item.title} (#{recipient.email})",   repair_conversation_messages_path(@repair, conversation)%>
+        <br>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
