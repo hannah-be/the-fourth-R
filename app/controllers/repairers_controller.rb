@@ -1,5 +1,5 @@
 class RepairersController < ApplicationController
-  before_action :set_repairer, only: [:show, :edit, :update, :destroy]
+  before_action :set_repairer, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   # GET /repairers
@@ -19,7 +19,7 @@ class RepairersController < ApplicationController
   # GET /repairers/1
   # GET /repairers/1.json
   def show
-    
+    @repairer = Repairer.find(params[:id])
   end
 
   # GET /repairers/new
