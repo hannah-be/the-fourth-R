@@ -1,5 +1,5 @@
 <h1>Items</h1>
-<%= link_to 'New Item', new_item_path %>
+<div class="links"><%= link_to 'New Item', new_item_path %></div>
 
 <div class="container-fluid">
   <div class="row">
@@ -14,13 +14,6 @@
           <p><%= item.category %></p>
         </div>
         <br>
-        <%# if item belongs to current_user %>
-        <% if item.user == current_user %>
-        <%= link_to 'Repair', new_repair_path(item_id: item.id) %>
-        <%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-        <% end %>
-        <%# elsif current_user is_repairer %>
-        <%# <div><%= link_to 'Offer to repair', item,  %> 
       </div>
     <% end %>
     </div>

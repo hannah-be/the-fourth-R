@@ -80,10 +80,20 @@ body {
   }
 
   .links {
-    background: $color-grey;
+    background: $color-pink;
     border-radius: 10px;
+    border: 1px $color-darkgreen;
     max-width: 100px;
-    padding: 2px;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    right: 0;
+
+    a {
+      margin: auto;
+    }
   }
   
   .devise-body, .support, .qa, .about {

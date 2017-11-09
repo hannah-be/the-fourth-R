@@ -1,30 +1,54 @@
-<p>
-  <strong>
-  <%= @item.title %>
-  </strong>
-</p>
+<div class="links"><%= link_to 'Back', items_path %></div>
+<div class="container-fluid">
+  <div class="row">
+      <div class="card card-body">
+      <% if @item.photo.present? %>
+        <figure>
+        <%= image_tag @item.photo_url(:medium) %>
+        </figure>
+      <% end %>
+      <div class="card-text">
+        <p>
+          <strong>
+          <%= @item.title %>
+          </strong>
+        </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @item.category %>
-</p>
+        <p>
+          <strong>Category:</strong>
+          <%= @item.category %>
+        </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
+        <p>
+          <strong>Description:</strong>
+          <%= @item.description %>
+        </p>
 
-<p>
-  <strong>Problem:</strong>
-  <%= @item.problem %>
-</p>
+        <p>
+          <strong>Problem:</strong>
+          <%= @item.problem %>
+        </p>
+      </div>
 
-<% if @item.photo.present? %>
-  <figure>
-  <%= image_tag @item.photo_url(:medium) %>
-  </figure>
-<% end %>
-
-
-<div class="links"><%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %></div>
+        <%# if item belongs to current_user %>
+        <% if @item.user == current_user %>
+        <%# if repair already exists %>
+          <div class="links">
+          <% if @item.repair %>
+            <%= link_to 'View Repair', repair_path(item_id: @item.id) %>
+          <% else %>
+            <%= link_to 'Get it repaired', new_repair_path(item_id: @item.id) %>
+          <% end %></div>
+          <div class="links">
+          <%= link_to 'Edit', edit_item_path(@item) %> | 
+          <%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+        <% end %>
+        <%# elsif current_user is_repairer %>
+        <%# <div><%= link_to 'Offer to repair', item,  %> 
+      
+      
+      </div>
+      
+    </div>
+  </div>
+</div>
